@@ -1,7 +1,45 @@
-# Vue 3 + Vite
+# Vue Demo
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Install yarn
+```shell
+npm install -g yarn
+```
 
-## Recommended IDE Setup
+## Create vite project
+```shell
+yarn create vite
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+...
+yarn create v1.22.19
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+
+      - create-vite
+      - cva
+√ Project name: ... vue-demo
+√ Select a framework: » Vue
+√ Select a variant: » JavaScript
+```
+
+## Run as development
+```shell
+yarn dev
+  VITE v4.3.9  ready in 1553 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+
+  Shortcuts
+  press r to restart the server
+  press u to show server url
+  press o to open in browser
+  press c to clear console
+  press q to quit
+```
+
+## Build and Deployment
+```
+Not yet...
+```
+

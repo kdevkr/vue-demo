@@ -1,11 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const Home = { template: '<div>Home</div>' }
-const About = { template: '<div>About</div>' }
-
+// https://router.vuejs.org/guide/advanced/lazy-loading.html#with-vite
+// NOTE: if you want chunk with grouping, please check docs.
 const routes = [
-    { path: '/', component: Home },
-    { path: '/about', component: About },
+    { path: '/', component: () => import('@/views/Home.vue') },
+    { path: '/about', component: () => import('@/views/About.vue') },
 ]
 
 const router = createRouter({

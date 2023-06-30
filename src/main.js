@@ -6,7 +6,7 @@ import './style.css'
 import App from './App.vue'
 
 createApp(App) //
-    .use(router)
-    .use(createPinia())
-    .use(createLoading())
-    .mount('#app')
+  .use(router)
+  .use(createPinia())
+  .use(createLoading())
+  .mount('#app')

@@ -9,6 +9,7 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
 import { useLoading } from 'vue-loading-overlay'
+import Header from '@/components/TopHeader.vue'
 
 const $loading = useLoading()
 const current = ref(new Date())
@@ -32,11 +33,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <header>
-    <router-link to="/">Home</router-link> 
-    <router-link to="/about" style="margin-left: 10px;">About</router-link>
-  </header>
-  <main>
+  <Header/>
+  <main class="px-3 py-2">
     <router-view></router-view>
   </main>
 </template>

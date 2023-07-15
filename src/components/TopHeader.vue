@@ -13,7 +13,7 @@ function updateDarkMode(darkMode) {
 }
 </script>
 <template>
-    <nav class="w-full border-b dark:bg-slate-800 dark:text-white">
+    <nav class="w-full border-b dark:bg-slate-800 dark:text-white dark:border-slate-700">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between flex-wrap">
                 <div class="flex items-center">
@@ -21,18 +21,20 @@ function updateDarkMode(darkMode) {
                     <h1 class="h1 text-2xl font-pretendard font-extrabold leading-none tracking-tight mx-2">Vue Demo</h1>
                     <div class="mx-2 space-x-4">
                         <router-link to="/">Home</router-link>
-                        <router-link to="/about">About</router-link> 
-                        <router-link to="/formatters">Formatters</router-link> 
+                        <router-link to="/about">About</router-link>
+                        <router-link to="/error">Error</router-link>
                     </div>
                 </div>
                 <div class="flex items-end">
-                    <Switch v-model="darkMode" @update:modelValue="updateDarkMode" class="relative inline-flex h-7 w-14 items-center rounded-full ui-checked:bg-blue-500 ui-not-checked:bg-gray-200">
+                    <Switch v-model="darkMode" @update:modelValue="updateDarkMode"
+                        class="relative inline-flex h-7 w-14 items-center rounded-full ui-checked:bg-blue-500 ui-not-checked:bg-gray-200">
                         <span class="sr-only">Enable Dark Mode</span>
                         <span class="absolute" style="margin-top: 2px;">
                             <i class="fas fa-moon text-yellow-500" style="margin-left: 11px;"></i>
-                            <i class="fas fa-sun text-yellow-500" style="margin-left: 8px;"></i>    
+                            <i class="fas fa-sun text-yellow-500" style="margin-left: 8px;"></i>
                         </span>
-                        <span class="inline-block h-5 w-5 transform rounded-full bg-white transition duration-300 ui-checked:translate-x-7 ui-not-checked:translate-x-2"></span>
+                        <span
+                            class="inline-block h-5 w-5 transform rounded-full bg-white transition duration-300 ui-checked:translate-x-7 ui-not-checked:translate-x-2"></span>
                     </Switch>
                 </div>
             </div>

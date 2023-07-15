@@ -33,8 +33,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <Header/>
-  <main class="px-3 py-2">
+  <Header />
+  <main class="px-3 py-2 dark:bg-slate-800">
     <router-view></router-view>
   </main>
 </template>

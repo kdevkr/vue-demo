@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive, computed } from 'vue'
+import { useRouter } from 'vue-router';
 import { useDark, useToggle } from '@vueuse/core'
 import { Switch } from '@headlessui/vue'
 
@@ -11,6 +12,9 @@ function updateDarkMode(darkMode) {
     toggleDark(darkMode)
     console.log('Current darkMode:', darkMode)
 }
+
+const router = reactive(useRouter())
+const routes = computed(() => router.getRoutes())
 </script>
 <template>
     <nav class="w-full border-b dark:bg-slate-800 dark:text-white dark:border-slate-700">
@@ -20,9 +24,9 @@ function updateDarkMode(darkMode) {
                     <a href="/"><img src="@/assets/logo.png" class="h-8 logo" alt="Logo" /></a>
                     <h1 class="h1 text-2xl font-pretendard font-extrabold leading-none tracking-tight mx-2">Vue Demo</h1>
                     <div class="mx-2 space-x-4">
-                        <router-link to="/">Home</router-link>
-                        <router-link to="/about">About</router-link>
-                        <router-link to="/error">Error</router-link>
+                        <router-link v-for="(route, i) in routes" :key="`routes-idx-${i}`" :to="route.path">
+                            {{ route.meta?.name }}
+                        </router-link>
                     </div>
                 </div>
                 <div class="flex items-end">

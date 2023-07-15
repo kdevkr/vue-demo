@@ -3,9 +3,21 @@ import { createRouter, createWebHistory } from 'vue-router'
 // https://router.vuejs.org/guide/advanced/lazy-loading.html#with-vite
 // NOTE: if you want chunk with grouping, please check docs.
 const routes = [
-  { path: '/', component: () => import('@/views/Home.vue') },
-  { path: '/about', component: () => import('@/views/About.vue') },
-  { path: '/error', component: () => import('@/views/Error.vue') },
+  {
+    path: '/',
+    meta: { name: 'Home' },
+    component: () => import('@/views/Home.vue'),
+  },
+  {
+    path: '/about',
+    meta: { name: 'About' },
+    component: () => import('@/views/About.vue'),
+  },
+  {
+    path: '/error',
+    meta: { name: 'Error' },
+    component: () => import('@/views/Error.vue'),
+  },
 ]
 
 const router = createRouter({

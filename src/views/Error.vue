@@ -1,3 +1,9 @@
+<script setup>
+import { useMeta } from 'vue-meta'
+useMeta({
+    title: 'Error',
+})
+</script>
 <template>
     <section class="grid place-items-center bg-white dark:bg-slate-800">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">

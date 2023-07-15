@@ -11,8 +11,13 @@ import { ref, onMounted, nextTick } from 'vue'
 import { useLoading } from 'vue-loading-overlay'
 import Header from '@/components/TopHeader.vue'
 
+import { useMeta } from 'vue-meta'
+
 const $loading = useLoading()
 const current = ref(new Date())
+
+const siteName = 'Vue Demo'
+useMeta({ title: siteName })
 
 onMounted(() => {
   const loader = $loading.show({
@@ -21,19 +26,23 @@ onMounted(() => {
     opacity: 0.6,
     'background-color': '#dedede'
   })
-  
+
   console.log('onMounted', current.value)
 
   nextTick(() => {
     if (loader) {
-      setTimeout(() => loader.hide(), 3000)
+      setTimeout(() => loader.hide(), 500)
     }
   })
 })
 </script>
 
 <template>
-  <metainfo></metainfo>
+  <metainfo>
+    <template v-slot:title="{ content }">
+      {{ content && content !== siteName ? `${content} | ${siteName}` : siteName }}
+    </template>
+  </metainfo>
   <Header />
   <main class="px-3 py-2 dark:bg-slate-800">
     <router-view></router-view>

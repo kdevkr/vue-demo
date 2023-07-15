@@ -33,6 +33,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <metainfo></metainfo>
   <Header />
   <main class="px-3 py-2 dark:bg-slate-800">
     <router-view></router-view>

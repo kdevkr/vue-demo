@@ -30,8 +30,9 @@ const routes = computed(() => router.getRoutes())
                     </div>
                 </div>
                 <div class="flex items-end">
-                    <Switch v-model="darkMode" @update:modelValue="updateDarkMode"
-                        class="relative inline-flex h-7 w-14 items-center rounded-full ui-checked:bg-blue-500 ui-not-checked:bg-gray-200">
+                    <Switch
+                        v-model="darkMode" class="relative inline-flex h-7 w-14 items-center rounded-full ui-checked:bg-blue-500 ui-not-checked:bg-gray-200"
+                        @update:modelValue="updateDarkMode">
                         <span class="sr-only">Enable Dark Mode</span>
                         <span class="absolute" style="margin-top: 2px;">
                             <i class="fas fa-moon text-yellow-500" style="margin-left: 11px;"></i>

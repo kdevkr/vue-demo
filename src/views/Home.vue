@@ -39,7 +39,7 @@ onMounted(() => {
     <h5>WebSocket</h5>
     <p>Message: {{ message }}</p>
     <div>
-        <q-btn color="primary" label="Subscribe" @click="subscribe" v-if="!subscribeId" />
-        <q-btn color="negative" label="Unubscribe" @click="unsubscribe" v-else />
+        <q-btn v-if="!subscribeId" color="primary" label="Subscribe" @click="subscribe" />
+        <q-btn v-else color="negative" label="Unubscribe" @click="unsubscribe" />
     </div>
 </template>

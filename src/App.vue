@@ -38,13 +38,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <metainfo>
-    <template v-slot:title="{ content }">
-      {{ content && content !== siteName ? `${content} | ${siteName}` : siteName }}
-    </template>
-  </metainfo>
-  <Header />
-  <main class="px-3 py-2 dark:bg-slate-800">
-    <router-view></router-view>
-  </main>
+    <metainfo>
+        <template #title="{ content }">
+            {{ content && content !== siteName ? `${content} | ${siteName}` : siteName }}
+        </template>
+    </metainfo>
+    <Header />
+    <main class="px-3 py-2 dark:bg-slate-800">
+        <router-view></router-view>
+    </main>
 </template>
